@@ -108,7 +108,7 @@ class Auth
         }
         $list = []; //保存验证通过的规则名
         if ('url' == $mode) {
-            $REQUEST = unserialize(strtolower(serialize($this->request->param())));
+            $REQUEST = unserialize(strtolower(serialize(request()->param())));
         }
         foreach ($authList as $auth) {
             $query = preg_replace('/^.+\?/U', '', $auth);
